@@ -81,13 +81,13 @@ trait ApiResponseTrait
 
         }
 
-        if ($data['success'] === false) {
+        /*if ($data['success'] === false) {
             if (isset($data['error_code'])) {
                 $responseStructure['error_code'] = $data['error_code'];
             } else {
                 $responseStructure['error_code'] = 1;
             }
-        }
+        }*/
 
         return ["content" => $responseStructure, "statusCode" => $statusCode, "headers" => $headers];
     }
@@ -248,7 +248,7 @@ trait ApiResponseTrait
      *
      * @return JsonResponse
      */
-    protected function respondError($message, int $statusCode = 400, Exception $exception = null, int $error_code = null): JsonResponse
+    protected function respondError($message, int $statusCode = 400, array $errors = null, Exception $exception = null): JsonResponse
     {
 
         return $this->apiResponse(
@@ -256,7 +256,7 @@ trait ApiResponseTrait
                 'success' => false,
                 'message' => $message ?? 'There was an internal error, Please try again later',
                 'exception' => $exception,
-                'error_code' => $error_code,
+                'errors' => $errors,
             ],
             $statusCode
         );

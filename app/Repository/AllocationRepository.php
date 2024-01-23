@@ -45,7 +45,9 @@ class AllocationRepository implements AllocationRepositoryInterface
     public function updateAllocation(Allocation $allocation, array $data): JsonResponse
     {
         $allocation->update($data);
-        return response()->json($allocation);
+        return $this->apiResponse([
+            'result' => $allocation
+        ]);
     }
 
 
@@ -62,7 +64,9 @@ class AllocationRepository implements AllocationRepositoryInterface
             'pocket2' => 0,
             'pocket3' => 0,
         ]);
-        return response()->json($allocation);
+        return $this->apiResponse([
+            'result' => $allocation
+        ]);
     }
 
 }

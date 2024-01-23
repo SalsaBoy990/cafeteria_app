@@ -23,12 +23,6 @@
                         <font-awesome-icon :icon="['fas', 'money-bill']"/>
                         Cafeteria
                     </router-link>
-
-                    <router-link class="nav-link" :to="{ name: 'dashboard' }">
-                        <font-awesome-icon :icon="['fas', 'dashboard']"/>
-                        Dashboard
-                    </router-link>
-
                     <a class="nav-link" href="javascript:void(0)" @click="logout">Logout</a>
                 </nav>
 
@@ -84,11 +78,10 @@
                                     Home
                                 </router-link>
 
-                                <router-link class="nav-link" :to="{ name: 'dashboard' }">
-                                    <font-awesome-icon :icon="['fas', 'dashboard']"/>
-                                    Dashboard
+                                <router-link class="nav-link" :to="{ name: 'cafeteria' }">
+                                    <font-awesome-icon :icon="['fas', 'money-bill']"/>
+                                    Cafeteria
                                 </router-link>
-
                                 <a class="nav-link" href="javascript:void(0)" @click="logout">Logout</a>
                             </nav>
 
@@ -109,7 +102,6 @@
 <script>
 import clickOutside from "@/directives/clickOutside";
 import {mapActions} from "vuex";
-//import Logout from "../private/Logout.vue";
 import logoImg from '@/assets/images/logo.png';
 
 export default {

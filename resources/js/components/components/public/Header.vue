@@ -14,18 +14,6 @@
 
                 <!-- DESKTOP MENU -->
                 <nav ref="mainMenu" id="main-menu">
-
-                    <router-link class="nav-link" :to="{ name: 'home' }">
-                        <font-awesome-icon :icon="['fas', 'home']"/>
-                        Home
-                    </router-link>
-
-                    <router-link class="nav-link" :to="{ name: 'dashboard' }">
-                        <font-awesome-icon :icon="['fas', 'dashboard']"/>
-                        Dashboard
-                    </router-link>
-
-
                     <router-link class="nav-link" :to="{ name: 'login' }">
                         <font-awesome-icon :icon="['fas', 'user']"/>
                         Login
@@ -84,16 +72,13 @@
 
                             <!-- MOBILE MENU -->
                             <nav id="main-menu">
-                                <router-link class="nav-link" :to="{ name: 'home' }">
-                                    <font-awesome-icon :icon="['fas', 'home']"/>
-                                    Home
-                                </router-link>
-
-
-
                                 <router-link class="nav-link" :to="{ name: 'login' }">
                                     <font-awesome-icon :icon="['fas', 'user']"/>
                                     Login
+                                </router-link>
+                                <router-link class="nav-link" :to="{ name: 'register' }">
+                                    <font-awesome-icon :icon="['fas', 'user']"/>
+                                    Register
                                 </router-link>
                             </nav>
 
@@ -115,12 +100,9 @@
 import clickOutside from "@/directives/clickOutside";
 import logoImg from '@/assets/images/logo.png';
 
-
 export default {
     name: "GuestHeader",
-    components: {
-
-    },
+    components: {},
     directives: {
         clickOutside,
     },
@@ -141,7 +123,6 @@ export default {
             localStorage.setItem('darkMode', $val);
         },
     },
-
 
 
     mounted() {

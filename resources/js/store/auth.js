@@ -28,7 +28,7 @@ export default {
             return axios.get(import.meta.env.VITE_BASE_URL + 'api/v1/user').then(({data}) => {
                 commit('SET_USER', data)
                 commit('SET_AUTHENTICATED', true)
-                router.push({name: 'dashboard'})
+                router.push({name: 'cafeteria'})
             }).catch(({response: {data}}) => {
                 commit('SET_USER', {})
                 commit('SET_AUTHENTICATED', false)

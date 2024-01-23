@@ -30,7 +30,10 @@ class FileExportController extends Controller
 
         return response()->streamDownload(function () {
             echo $this->dataExportService->exportAllocationsToCSV();
-        }, $exportFilename);
+        }, $exportFilename, [
+            'Content-Type' => 'text/csv',
+            'Filename' => $exportFilename
+        ]);
     }
 
 }

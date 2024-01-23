@@ -19,6 +19,8 @@ const GuestLayout = () => import('@/components/layouts/Guest.vue')
 /* Authenticated Component */
 const Dashboard = () => import('@/components/pages/app/Dashboard.vue')
 const SingleArticle = () => import('@/components/pages/app/SingleArticle.vue')
+
+const Cafeteria = () => import('@/components/pages/app/Cafeteria.vue')
 /* Authenticated Component */
 
 
@@ -85,8 +87,27 @@ const routes = [
         },
         children: [
             {
-                name: "dashboard",
+                name: "cafeteria",
                 path: '/',
+                component: Cafeteria,
+                meta: {
+                    title: `Cafeteria`
+                }
+            }
+        ]
+    },
+
+
+    {
+        path: "/manage-articles",
+        component: AppLayout,
+        meta: {
+            middleware: "auth"
+        },
+        children: [
+            {
+                name: "dashboard",
+                path: '/manage-articles',
                 component: Dashboard,
                 meta: {
                     title: `Dashboard`

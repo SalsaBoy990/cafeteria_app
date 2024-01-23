@@ -19,6 +19,11 @@
                         Home
                     </router-link>
 
+                    <router-link class="nav-link" :to="{ name: 'cafeteria' }">
+                        <font-awesome-icon :icon="['fas', 'money-bill']"/>
+                        Cafeteria
+                    </router-link>
+
                     <router-link class="nav-link" :to="{ name: 'dashboard' }">
                         <font-awesome-icon :icon="['fas', 'dashboard']"/>
                         Dashboard
@@ -109,8 +114,7 @@ import logoImg from '@/assets/images/logo.png';
 
 export default {
     name: "Header",
-    components: {
-    },
+    components: {},
     directives: {
         clickOutside,
     },

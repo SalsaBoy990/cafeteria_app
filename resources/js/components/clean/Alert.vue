@@ -42,6 +42,7 @@ export default {
     computed: {
         alertClasses() {
             switch (this.$props.color) {
+                case 'error':
                 case 'danger':
                     return 'alert danger';
                 case 'warning':

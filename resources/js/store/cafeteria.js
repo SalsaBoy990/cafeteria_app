@@ -190,7 +190,7 @@ export default {
         },
 
 
-        /* Reset existing allocation */
+        /* Gets allocation limits */
         async getAllocationLimits({commit}) {
             await axios.get(baseUrl + 'sanctum/csrf-cookie')
             await axios.get(apiUrl + 'allocation/limits')
@@ -206,7 +206,7 @@ export default {
                 });
         },
 
-        /* Reset existing allocation */
+        /* Gets allocation sums */
         async getAllocationSums({commit}) {
             await axios.get(baseUrl + 'sanctum/csrf-cookie')
             await axios.get(apiUrl + 'allocation/sums')

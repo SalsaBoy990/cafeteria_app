@@ -127,7 +127,7 @@ class CafeteriaValidationService implements CafeteriaValidationServiceInterface
     public function validatePocket(string $pocketName, AllocationRequest $request, Allocation $allocation): array
     {
         // Pocket max limit validation
-        $pocketSum = $this->getAnnualPocketSum($pocketName) + $request->get($pocketName) - $allocation->pocket1;
+        $pocketSum = $this->getAnnualPocketSum($pocketName) + $request->get($pocketName);
         $pocketExceedsAmount = $this->hasExceedingPocketLimit($pocketSum, $pocketName);
         if ($pocketExceedsAmount > 0) {
             return [$pocketName => 'Pocket limit exceeded by ' . $pocketExceedsAmount . ' Ft'];

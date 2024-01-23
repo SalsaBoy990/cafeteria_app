@@ -14,7 +14,7 @@ A backendhez kevés idő kellett, az volt a könnyebb része a feladatnak.
 A projekt belövése:
 
 - mysql adatbázis létrehozása
-- .env fájl beállítása
+- .env fájl beállítása (az .env.example-be másoltam az általam használt .env tartalmát)
 - composer update
 - php artisan migrate
 - php artisan db:seed

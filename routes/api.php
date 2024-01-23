@@ -39,6 +39,8 @@ Route::group(['prefix' => 'v1',  /*'middleware' => ['auth:sanctum'] */],
 
         /* CSV export download */
         Route::get('allocation/download_csv', [FileExportController::class, 'download'])->name('allocation.download');
+        Route::get('allocation/limits', [AllocationController::class, 'getAllocationLimits'])->name('allocation.limits');
+        Route::get('allocation/sums', [AllocationController::class, 'getAllocationSums'])->name('allocation.sums');
 
         Route::get('allocation/{allocation}', [AllocationController::class, 'show'])->name('allocation.get');
         Route::put('allocation/{allocation}', [AllocationController::class, 'update'])->name('allocation.update');

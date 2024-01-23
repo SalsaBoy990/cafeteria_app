@@ -13,6 +13,10 @@ interface CafeteriaValidationServiceInterface
 
     public function getAnnualAllocationSum(): int;
 
+    public function getAllocationSums(): array;
+
+    public function getAllocationLimits(): array;
+
     public function getAnnualPocketSum(string $pocketName): int;
 
     public function hasExceedingCafeteriaLimit(int $sum): int;

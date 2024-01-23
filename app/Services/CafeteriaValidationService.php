@@ -25,6 +25,36 @@ class CafeteriaValidationService implements CafeteriaValidationServiceInterface
 
 
     /**
+     * Gets the current annual sums of all cafeteria, and per pockets
+     * @return array
+     */
+    public function getAllocationSums(): array
+    {
+        $result = Allocation::selectRaw('SUM(pocket1) as pocket1, SUM(pocket2) as pocket2, SUM(pocket3) as pocket3')->first();
+        return [
+            'cafeteriaSum' => intval($result->pocket1) + intval($result->pocket2) + intval($result->pocket3),
+            'pocketOneSum' => intval($result->pocket1),
+            'pocketTwoSum' => intval($result->pocket2),
+            'pocketThreeSum' => intval($result->pocket3),
+        ];
+    }
+
+
+    /**
+     * Gets the allocation limits
+     *
+     * @return array
+     */
+    public function getAllocationLimits(): array
+    {
+        return [
+            'cafeteriaLimit' => AllocationInterface::CAFETERIA_MAX_LIMIT,
+            'pocketLimit' => AllocationInterface::POCKET_MAX_LIMIT,
+        ];
+    }
+
+
+    /**
      * Gets the sum of one allocation pocket
      *
      * @param string $pocketName
@@ -68,6 +98,7 @@ class CafeteriaValidationService implements CafeteriaValidationServiceInterface
 
 
     /**
+     * Get the current sums of the pockets
      * @param Allocation $allocation
      * @return int
      */

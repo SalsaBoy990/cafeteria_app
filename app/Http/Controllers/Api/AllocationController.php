@@ -89,4 +89,26 @@ class AllocationController extends Controller
         return $this->allocationRepository->resetAllocation($allocation);
     }
 
+
+    /**
+     * @return JsonResponse
+     */
+    public function getAllocationLimits(): JsonResponse {
+        $limits = $this->cafeteriaValidationService->getAllocationLimits();
+        return $this->apiResponse([
+            'result' => $limits
+        ]);
+    }
+
+
+    /**
+     * @return JsonResponse
+     */
+    public function getAllocationSums(): JsonResponse {
+        $sums = $this->cafeteriaValidationService->getAllocationSums();
+        return $this->apiResponse([
+            'result' => $sums
+        ]);
+    }
+
 }

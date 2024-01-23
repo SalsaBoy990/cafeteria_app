@@ -6,7 +6,7 @@
                    :color="cafeteriaStore.status">
                 <ul v-if="cafeteriaStore.errors" class="no-bullets padding-left-0 margin-0">
                     <li v-for="error in cafeteriaStore.errors">
-                        {{ error }}
+                        {{ error instanceof Array ? error[0] : error }}
                     </li>
                 </ul>
             </Alert>

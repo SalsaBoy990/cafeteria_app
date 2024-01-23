@@ -143,6 +143,7 @@ export default {
                 .then(res => {
                     commit('SET_MESSAGE', 'Allocation successfully updated!');
                     commit('SET_STATUS', 'success');
+                    commit('SET_ERRORS', {});
 
                     setTimeout(() => {
                         dispatch('getAllocations');
@@ -176,6 +177,7 @@ export default {
                 .then(res => {
                     commit('SET_MESSAGE', 'Successful Allocation reset!');
                     commit('SET_STATUS', 'success');
+                    commit('SET_ERRORS', {});
 
                     setTimeout(() => {
                         dispatch('getAllocations');

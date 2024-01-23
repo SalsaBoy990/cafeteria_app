@@ -2,7 +2,7 @@
     <div class="container relative">
 
         <div class="alert__fixed">
-            <Alert :key="cafeteriaStore.message" v-if="cafeteriaStore.message !== ''" :heading="cafeteriaStore.message" :showCloseButton="true"
+            <Alert :key="cafeteriaStore.message" v-if="cafeteriaStore.message !== ''" :heading="cafeteriaStore.message" :showCloseButton="false"
                    :color="cafeteriaStore.status">
                 <ul v-if="cafeteriaStore.errors" class="no-bullets padding-left-0 margin-0">
                     <li v-for="error in cafeteriaStore.errors">

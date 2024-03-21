@@ -1,14 +1,6 @@
 # SETUP és LEÍRÁS
 
-Az általam fejlesztett "laravel_vue" starter projektemből indultam ki (https://github.com/SalsaBoy990/laravel_vue), amin
-az egész hétvégén dolgoztam. A starter-be már raktam autentikációt, igaz a feladatban nem kértétek. Egy viszonylag
-rendes felületet alakítottam ki, mert nem akartam igénytelen munkát kiadni kezemből.
-
-Vuex-et használtam state management céljából. A legtöbb idő a Vuex tanulmányozásával és a frontend strukturálásával
-telt. Mindenképpen state management-et akartam használni, hogy egy központi store-ból lehessen hozzáférni a state-hez
-bármelyik komponensből, és persze mutálni azt az action-ökkel.
-
-A backendhez kevés idő kellett, az volt a könnyebb része a feladatnak.
+Az általam fejlesztett "laravel_vue" starter projektemből indultam ki (https://github.com/SalsaBoy990/laravel_vue). A starter-be már raktam autentikációt. Vuex-et használtam state management céljából.
 
 **A projekt belövése:**
 
@@ -22,19 +14,6 @@ A backendhez kevés idő kellett, az volt a könnyebb része a feladatnak.
 
 A login oldalon be kell lépni (az űrlap már ki van töltve a felhasználó adataival, de a user seeder-ben is
 megtalálhatók).
-
-Laravel sail-es docker setupot még sosem használtam, és a tanulmányozására sem jutott időm, így maradtam a docker-en
-kívül (xampp környezet - most Windows-on dolgoztam). Illetve a Vue.js-t sem TypeScript-tel használtam még.
-
-A projekt egyszerűsége nem kívánta meg az unit teszteket, a feladatleírásban sem szerepelt feltételként, illetve erre
-sem maradt időm.
-
-Az appot tovább lehetne még fejleszteni, hiszen itt csak az idei év 12 hónapjára lehet kezelni a cafeteriát és a
-zsebeket. Például lehetne egy select mező, ahol az év kiválasztható, és az ahhoz tartozó adatok jelennének meg a
-táblázatban, és lennének kezelhetők. Lehetne mondjuk évenkénti / összes évre vonatkozó CSV export is. Ez gyorsan
-megvalósítható lenne.
-
-
 
 
 
